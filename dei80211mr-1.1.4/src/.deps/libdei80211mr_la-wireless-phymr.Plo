@@ -1,0 +1,441 @@
+libdei80211mr_la-wireless-phymr.lo: wireless-phymr.cc \
+ /usr/include/stdc-predef.h /usr/include/math.h /usr/include/features.h \
+ /usr/include/i386-linux-gnu/sys/cdefs.h \
+ /usr/include/i386-linux-gnu/bits/wordsize.h \
+ /usr/include/i386-linux-gnu/gnu/stubs.h \
+ /usr/include/i386-linux-gnu/gnu/stubs-32.h \
+ /usr/include/i386-linux-gnu/bits/huge_val.h \
+ /usr/include/i386-linux-gnu/bits/huge_valf.h \
+ /usr/include/i386-linux-gnu/bits/huge_vall.h \
+ /usr/include/i386-linux-gnu/bits/inf.h \
+ /usr/include/i386-linux-gnu/bits/nan.h \
+ /usr/include/i386-linux-gnu/bits/mathdef.h \
+ /usr/include/i386-linux-gnu/bits/mathcalls.h \
+ /usr/include/i386-linux-gnu/bits/mathinline.h \
+ /usr/local/NS_2.33/ns-2.33/common/packet.h /usr/include/string.h \
+ /usr/lib/gcc/i686-linux-gnu/4.9/include/stddef.h /usr/include/xlocale.h \
+ /usr/include/i386-linux-gnu/bits/string3.h /usr/include/assert.h \
+ /usr/local/NS_2.33/ns-2.33/config.h \
+ /usr/include/i386-linux-gnu/sys/types.h \
+ /usr/include/i386-linux-gnu/bits/types.h \
+ /usr/include/i386-linux-gnu/bits/typesizes.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/i386-linux-gnu/bits/endian.h \
+ /usr/include/i386-linux-gnu/bits/byteswap.h \
+ /usr/include/i386-linux-gnu/bits/byteswap-16.h \
+ /usr/include/i386-linux-gnu/sys/select.h \
+ /usr/include/i386-linux-gnu/bits/select.h \
+ /usr/include/i386-linux-gnu/bits/sigset.h \
+ /usr/include/i386-linux-gnu/bits/time.h \
+ /usr/include/i386-linux-gnu/bits/select2.h \
+ /usr/include/i386-linux-gnu/sys/sysmacros.h \
+ /usr/include/i386-linux-gnu/bits/pthreadtypes.h /usr/include/stdlib.h \
+ /usr/include/i386-linux-gnu/bits/waitflags.h \
+ /usr/include/i386-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
+ /usr/include/i386-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/i386-linux-gnu/bits/stdlib-float.h \
+ /usr/include/i386-linux-gnu/bits/stdlib.h \
+ /usr/local/NS_2.33/ns-2.33/autoconf.h \
+ /usr/local/NS_2.33/tclcl-1.19/tclcl.h /usr/local/NS_2.33/include/tcl.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h /usr/lib/gcc/i686-linux-gnu/4.9/include/stdarg.h \
+ /usr/include/i386-linux-gnu/bits/stdio_lim.h \
+ /usr/include/i386-linux-gnu/bits/sys_errlist.h \
+ /usr/include/i386-linux-gnu/bits/stdio.h \
+ /usr/include/i386-linux-gnu/bits/stdio2.h \
+ /usr/local/NS_2.33/include/tclDecls.h \
+ /usr/local/NS_2.33/include/tclPlatDecls.h \
+ /usr/local/NS_2.33/otcl-1.13/otcl.h \
+ /usr/local/NS_2.33/tclcl-1.19/tclcl-config.h \
+ /usr/local/NS_2.33/tclcl-1.19/tracedvar.h \
+ /usr/local/NS_2.33/tclcl-1.19/tclcl-mappings.h /usr/include/strings.h \
+ /usr/include/unistd.h /usr/include/i386-linux-gnu/bits/posix_opt.h \
+ /usr/include/i386-linux-gnu/bits/environments.h \
+ /usr/include/i386-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/i386-linux-gnu/bits/unistd.h /usr/include/arpa/inet.h \
+ /usr/include/netinet/in.h \
+ /usr/lib/gcc/i686-linux-gnu/4.9/include/stdint.h /usr/include/stdint.h \
+ /usr/include/i386-linux-gnu/bits/wchar.h \
+ /usr/include/i386-linux-gnu/sys/socket.h \
+ /usr/include/i386-linux-gnu/sys/uio.h \
+ /usr/include/i386-linux-gnu/bits/uio.h \
+ /usr/include/i386-linux-gnu/bits/socket.h \
+ /usr/include/i386-linux-gnu/bits/socket_type.h \
+ /usr/include/i386-linux-gnu/bits/sockaddr.h \
+ /usr/include/i386-linux-gnu/asm/socket.h \
+ /usr/include/asm-generic/socket.h \
+ /usr/include/i386-linux-gnu/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/i386-linux-gnu/bits/socket2.h \
+ /usr/include/i386-linux-gnu/bits/in.h \
+ /usr/local/NS_2.33/ns-2.33/common/scheduler.h \
+ /usr/local/NS_2.33/ns-2.33/common/heap.h \
+ /usr/local/NS_2.33/ns-2.33/common/object.h \
+ /usr/local/NS_2.33/ns-2.33/lib/bsd-list.h \
+ /usr/local/NS_2.33/ns-2.33/common/packet-stamp.h \
+ /usr/local/NS_2.33/ns-2.33/mobile/antenna.h \
+ /usr/local/NS_2.33/ns-2.33/common/object.h \
+ /usr/local/NS_2.33/ns-2.33/common/ns-process.h \
+ /usr/local/NS_2.33/ns-2.33/common/mobilenode.h \
+ /usr/local/NS_2.33/ns-2.33/trace/trace.h \
+ /usr/local/NS_2.33/ns-2.33/trace/basetrace.h \
+ /usr/local/NS_2.33/ns-2.33/tcp/tcp.h \
+ /usr/local/NS_2.33/ns-2.33/common/agent.h \
+ /usr/local/NS_2.33/ns-2.33/common/connector.h \
+ /usr/local/NS_2.33/ns-2.33/common/packet.h \
+ /usr/local/NS_2.33/ns-2.33/common/timer-handler.h \
+ /usr/local/NS_2.33/ns-2.33/apps/app.h \
+ /usr/local/NS_2.33/ns-2.33/common/ns-process.h \
+ /usr/local/NS_2.33/ns-2.33/mac/phy.h \
+ /usr/local/NS_2.33/ns-2.33/common/bi-connector.h \
+ /usr/local/NS_2.33/ns-2.33/mac/channel.h \
+ /usr/local/NS_2.33/ns-2.33/mac/phy.h \
+ /usr/local/NS_2.33/ns-2.33/common/node.h \
+ /usr/local/NS_2.33/ns-2.33/common/net-interface.h \
+ /usr/local/NS_2.33/ns-2.33/mobile/energy-model.h \
+ /usr/include/c++/4.9/cstdlib \
+ /usr/include/i386-linux-gnu/c++/4.9/bits/c++config.h \
+ /usr/include/i386-linux-gnu/c++/4.9/bits/os_defines.h \
+ /usr/include/i386-linux-gnu/c++/4.9/bits/cpu_defines.h \
+ /usr/local/NS_2.33/ns-2.33/tools/rng.h \
+ /usr/local/NS_2.33/ns-2.33/common/location.h \
+ /usr/local/NS_2.33/ns-2.33/routing/rtmodule.h \
+ /usr/local/NS_2.33/ns-2.33/routing/addr-params.h \
+ /usr/local/NS_2.33/ns-2.33/classifier/classifier.h \
+ /usr/local/NS_2.33/ns-2.33/classifier/classifier-hash.h \
+ /usr/local/NS_2.33/ns-2.33/classifier/classifier.h \
+ /usr/local/NS_2.33/ns-2.33/common/ip.h \
+ /usr/local/NS_2.33/ns-2.33/classifier/classifier-hier.h \
+ /usr/local/NS_2.33/ns-2.33/routing/addr-params.h \
+ /usr/local/NS_2.33/ns-2.33/routing/route.h \
+ /usr/local/NS_2.33/ns-2.33/common/parentnode.h \
+ /usr/local/NS_2.33/ns-2.33/routing/address.h \
+ /usr/local/NS_2.33/ns-2.33/classifier/classifier-addr.h \
+ /usr/local/NS_2.33/ns-2.33/mac/mac.h /usr/local/NS_2.33/ns-2.33/mac/ll.h \
+ /usr/local/NS_2.33/ns-2.33/link/delay.h \
+ /usr/local/NS_2.33/ns-2.33/queue/queue.h \
+ /usr/local/NS_2.33/ns-2.33/common/connector.h \
+ /usr/local/NS_2.33/ns-2.33/mac/arp.h \
+ /usr/local/NS_2.33/ns-2.33/common/scheduler.h \
+ /usr/local/NS_2.33/ns-2.33/mac/lanRouter.h \
+ /usr/local/NS_2.33/ns-2.33/mac/varp.h \
+ /usr/local/NS_2.33/ns-2.33/mac/marshall.h \
+ /usr/local/NS_2.33/ns-2.33/mobile/topography.h \
+ /usr/local/NS_2.33/ns-2.33/mac/channel.h \
+ /usr/local/NS_2.33/ns-2.33/common/node.h \
+ /usr/local/NS_2.33/ns-2.33/mobile/gridkeeper.h \
+ /usr/local/NS_2.33/ns-2.33/mobile/propagation.h \
+ /usr/local/NS_2.33/ns-2.33/mac/wireless-phy.h \
+ /usr/local/NS_2.33/ns-2.33/mobile/modulation.h \
+ /usr/local/NS_2.33/ns-2.33/mobile/omni-antenna.h \
+ /usr/local/NS_2.33/ns-2.33/common/timer-handler.h \
+ /usr/local/NS_2.33/ns-2.33/common/packet-stamp.h wireless-phymr.h \
+ power_profile.h deipropagation.h \
+ /usr/local/NS_2.33/ns-2.33/diffusion/diff_header.h papropagation.h
+
+/usr/include/stdc-predef.h:
+
+/usr/include/math.h:
+
+/usr/include/features.h:
+
+/usr/include/i386-linux-gnu/sys/cdefs.h:
+
+/usr/include/i386-linux-gnu/bits/wordsize.h:
+
+/usr/include/i386-linux-gnu/gnu/stubs.h:
+
+/usr/include/i386-linux-gnu/gnu/stubs-32.h:
+
+/usr/include/i386-linux-gnu/bits/huge_val.h:
+
+/usr/include/i386-linux-gnu/bits/huge_valf.h:
+
+/usr/include/i386-linux-gnu/bits/huge_vall.h:
+
+/usr/include/i386-linux-gnu/bits/inf.h:
+
+/usr/include/i386-linux-gnu/bits/nan.h:
+
+/usr/include/i386-linux-gnu/bits/mathdef.h:
+
+/usr/include/i386-linux-gnu/bits/mathcalls.h:
+
+/usr/include/i386-linux-gnu/bits/mathinline.h:
+
+/usr/local/NS_2.33/ns-2.33/common/packet.h:
+
+/usr/include/string.h:
+
+/usr/lib/gcc/i686-linux-gnu/4.9/include/stddef.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/i386-linux-gnu/bits/string3.h:
+
+/usr/include/assert.h:
+
+/usr/local/NS_2.33/ns-2.33/config.h:
+
+/usr/include/i386-linux-gnu/sys/types.h:
+
+/usr/include/i386-linux-gnu/bits/types.h:
+
+/usr/include/i386-linux-gnu/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/include/endian.h:
+
+/usr/include/i386-linux-gnu/bits/endian.h:
+
+/usr/include/i386-linux-gnu/bits/byteswap.h:
+
+/usr/include/i386-linux-gnu/bits/byteswap-16.h:
+
+/usr/include/i386-linux-gnu/sys/select.h:
+
+/usr/include/i386-linux-gnu/bits/select.h:
+
+/usr/include/i386-linux-gnu/bits/sigset.h:
+
+/usr/include/i386-linux-gnu/bits/time.h:
+
+/usr/include/i386-linux-gnu/bits/select2.h:
+
+/usr/include/i386-linux-gnu/sys/sysmacros.h:
+
+/usr/include/i386-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/i386-linux-gnu/bits/waitflags.h:
+
+/usr/include/i386-linux-gnu/bits/waitstatus.h:
+
+/usr/include/alloca.h:
+
+/usr/include/i386-linux-gnu/bits/stdlib-bsearch.h:
+
+/usr/include/i386-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/i386-linux-gnu/bits/stdlib.h:
+
+/usr/local/NS_2.33/ns-2.33/autoconf.h:
+
+/usr/local/NS_2.33/tclcl-1.19/tclcl.h:
+
+/usr/local/NS_2.33/include/tcl.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/i686-linux-gnu/4.9/include/stdarg.h:
+
+/usr/include/i386-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/i386-linux-gnu/bits/sys_errlist.h:
+
+/usr/include/i386-linux-gnu/bits/stdio.h:
+
+/usr/include/i386-linux-gnu/bits/stdio2.h:
+
+/usr/local/NS_2.33/include/tclDecls.h:
+
+/usr/local/NS_2.33/include/tclPlatDecls.h:
+
+/usr/local/NS_2.33/otcl-1.13/otcl.h:
+
+/usr/local/NS_2.33/tclcl-1.19/tclcl-config.h:
+
+/usr/local/NS_2.33/tclcl-1.19/tracedvar.h:
+
+/usr/local/NS_2.33/tclcl-1.19/tclcl-mappings.h:
+
+/usr/include/strings.h:
+
+/usr/include/unistd.h:
+
+/usr/include/i386-linux-gnu/bits/posix_opt.h:
+
+/usr/include/i386-linux-gnu/bits/environments.h:
+
+/usr/include/i386-linux-gnu/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/i386-linux-gnu/bits/unistd.h:
+
+/usr/include/arpa/inet.h:
+
+/usr/include/netinet/in.h:
+
+/usr/lib/gcc/i686-linux-gnu/4.9/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/i386-linux-gnu/bits/wchar.h:
+
+/usr/include/i386-linux-gnu/sys/socket.h:
+
+/usr/include/i386-linux-gnu/sys/uio.h:
+
+/usr/include/i386-linux-gnu/bits/uio.h:
+
+/usr/include/i386-linux-gnu/bits/socket.h:
+
+/usr/include/i386-linux-gnu/bits/socket_type.h:
+
+/usr/include/i386-linux-gnu/bits/sockaddr.h:
+
+/usr/include/i386-linux-gnu/asm/socket.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/i386-linux-gnu/asm/sockios.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/i386-linux-gnu/bits/socket2.h:
+
+/usr/include/i386-linux-gnu/bits/in.h:
+
+/usr/local/NS_2.33/ns-2.33/common/scheduler.h:
+
+/usr/local/NS_2.33/ns-2.33/common/heap.h:
+
+/usr/local/NS_2.33/ns-2.33/common/object.h:
+
+/usr/local/NS_2.33/ns-2.33/lib/bsd-list.h:
+
+/usr/local/NS_2.33/ns-2.33/common/packet-stamp.h:
+
+/usr/local/NS_2.33/ns-2.33/mobile/antenna.h:
+
+/usr/local/NS_2.33/ns-2.33/common/object.h:
+
+/usr/local/NS_2.33/ns-2.33/common/ns-process.h:
+
+/usr/local/NS_2.33/ns-2.33/common/mobilenode.h:
+
+/usr/local/NS_2.33/ns-2.33/trace/trace.h:
+
+/usr/local/NS_2.33/ns-2.33/trace/basetrace.h:
+
+/usr/local/NS_2.33/ns-2.33/tcp/tcp.h:
+
+/usr/local/NS_2.33/ns-2.33/common/agent.h:
+
+/usr/local/NS_2.33/ns-2.33/common/connector.h:
+
+/usr/local/NS_2.33/ns-2.33/common/packet.h:
+
+/usr/local/NS_2.33/ns-2.33/common/timer-handler.h:
+
+/usr/local/NS_2.33/ns-2.33/apps/app.h:
+
+/usr/local/NS_2.33/ns-2.33/common/ns-process.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/phy.h:
+
+/usr/local/NS_2.33/ns-2.33/common/bi-connector.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/channel.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/phy.h:
+
+/usr/local/NS_2.33/ns-2.33/common/node.h:
+
+/usr/local/NS_2.33/ns-2.33/common/net-interface.h:
+
+/usr/local/NS_2.33/ns-2.33/mobile/energy-model.h:
+
+/usr/include/c++/4.9/cstdlib:
+
+/usr/include/i386-linux-gnu/c++/4.9/bits/c++config.h:
+
+/usr/include/i386-linux-gnu/c++/4.9/bits/os_defines.h:
+
+/usr/include/i386-linux-gnu/c++/4.9/bits/cpu_defines.h:
+
+/usr/local/NS_2.33/ns-2.33/tools/rng.h:
+
+/usr/local/NS_2.33/ns-2.33/common/location.h:
+
+/usr/local/NS_2.33/ns-2.33/routing/rtmodule.h:
+
+/usr/local/NS_2.33/ns-2.33/routing/addr-params.h:
+
+/usr/local/NS_2.33/ns-2.33/classifier/classifier.h:
+
+/usr/local/NS_2.33/ns-2.33/classifier/classifier-hash.h:
+
+/usr/local/NS_2.33/ns-2.33/classifier/classifier.h:
+
+/usr/local/NS_2.33/ns-2.33/common/ip.h:
+
+/usr/local/NS_2.33/ns-2.33/classifier/classifier-hier.h:
+
+/usr/local/NS_2.33/ns-2.33/routing/addr-params.h:
+
+/usr/local/NS_2.33/ns-2.33/routing/route.h:
+
+/usr/local/NS_2.33/ns-2.33/common/parentnode.h:
+
+/usr/local/NS_2.33/ns-2.33/routing/address.h:
+
+/usr/local/NS_2.33/ns-2.33/classifier/classifier-addr.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/mac.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/ll.h:
+
+/usr/local/NS_2.33/ns-2.33/link/delay.h:
+
+/usr/local/NS_2.33/ns-2.33/queue/queue.h:
+
+/usr/local/NS_2.33/ns-2.33/common/connector.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/arp.h:
+
+/usr/local/NS_2.33/ns-2.33/common/scheduler.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/lanRouter.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/varp.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/marshall.h:
+
+/usr/local/NS_2.33/ns-2.33/mobile/topography.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/channel.h:
+
+/usr/local/NS_2.33/ns-2.33/common/node.h:
+
+/usr/local/NS_2.33/ns-2.33/mobile/gridkeeper.h:
+
+/usr/local/NS_2.33/ns-2.33/mobile/propagation.h:
+
+/usr/local/NS_2.33/ns-2.33/mac/wireless-phy.h:
+
+/usr/local/NS_2.33/ns-2.33/mobile/modulation.h:
+
+/usr/local/NS_2.33/ns-2.33/mobile/omni-antenna.h:
+
+/usr/local/NS_2.33/ns-2.33/common/timer-handler.h:
+
+/usr/local/NS_2.33/ns-2.33/common/packet-stamp.h:
+
+wireless-phymr.h:
+
+power_profile.h:
+
+deipropagation.h:
+
+/usr/local/NS_2.33/ns-2.33/diffusion/diff_header.h:
+
+papropagation.h:
