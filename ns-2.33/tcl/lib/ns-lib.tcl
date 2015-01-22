@@ -299,6 +299,30 @@ Simulator instproc dumper obj {
 	return $t
 }
 
+
+#Listing 3.1 Procedure to change the number of interfaces
+Simulator instproc change-numifs {newnumifs} {
+	$self instvar numifs_
+	set numifs_ $newnumifs
+}
+
+#Listing 3.2 Procedure to add an interface on a node
+Simulator instproc add-channel {indexch ch} {
+	$self instvar chan
+	set chan($indexch) $ch
+}
+
+#Listing 3.3 Procedure to get the number of interfaces
+Simulator instproc get-numifs { } {
+	$self instvar numifs_
+	if [ info exists numifs_ ] {
+		return $numifs_
+	} else {
+		return ""
+	}
+}
+
+
 # New node structure
 #
 # Add APT to support multi-interface: user can specified multiple channels
@@ -378,6 +402,9 @@ Simulator instproc satNodeType {val} {$self set satNodeType_ $val}
 Simulator instproc downlinkBW {val} {$self set downlinkBW_ $val}
 Simulator instproc stopTime {val} {$self set stopTime_ $val}
 
+#Listring 3.4 Procedure to add multiple interfaces as an argument to node-config label
+Simulator instproc ifNum {val} {$self set numifs_ $val}
+
 # This method is needed so that new Routing Agents can be implemented in a dynamic
 # library and used without having to modify Simulator::create-wireless-node
 Simulator instproc rtAgentFunction {val} {$self set rtAgentFunction_ $val}
@@ -438,6 +465,7 @@ Simulator instproc get-nodetype {} {
 	return $val
 }
 
+#Listring 3.5 Changes on node-config procedure
 Simulator instproc node-config args {
         # Object::init-vars{} is defined in ~tclcl/tcl-object.tcl.
         # It initializes all default variables in the following way:
@@ -450,7 +478,7 @@ Simulator instproc node-config args {
         set args [eval $self init-vars $args]
 
         $self instvar addressType_  routingAgent_ propType_  macTrace_ \
-	    routerTrace_ agentTrace_ movementTrace_ channelType_ channel_ \
+	    routerTrace_ agentTrace_ movementTrace_ channelType_ channel_ numfis_ \
 	    chan topoInstance_ propInstance_ mobileIP_ \
 	    rxPower_ txPower_ idlePower_ sleepPower_ sleepTime_ transitionPower_ \
 	    transitionTime_ satNodeType_ eotTrace_ phyTrace_
@@ -507,7 +535,11 @@ Simulator instproc node-config args {
 		}
  	} elseif {[info exists channel_]} {
 		# Multiple channel, multiple interfaces
-		set chan $channel_
+		if {[info exists numifs_]} {
+			set chan(0) $channel_
+		} else {
+			set chan $channel_
+		}
  	}
 	if [info exists topoInstance_] {
 		$propInstance_  topography $topoInstance_
@@ -601,12 +633,13 @@ Simulator instproc imep-support {} {
 
 # XXX This should be moved into the node initialization procedure instead 
 # of standing here in ns-lib.tcl.
+#Listing 3.6 Changes on create-wireless-node procedure
 Simulator instproc create-wireless-node args {
         $self instvar routingAgent_ wiredRouting_ propInstance_ llType_ \
 	    macType_ ifqType_ ifqlen_ phyType_ chan antType_ \
 	    energyModel_ initialEnergy_ txPower_ rxPower_ \
 	    idlePower_ sleepPower_ sleepTime_ transitionPower_ transitionTime_ \
-	    topoInstance_ level1_ level2_ inerrProc_ outerrProc_ FECProc_ rtAgentFunction_
+	    topoInstance_ level1_ level2_ inerrProc_ outerrProc_ FECProc_ rtAgentFunction_ numifs_
 
 	Simulator set IMEPFlag_ OFF
 
@@ -682,10 +715,21 @@ Simulator instproc create-wireless-node args {
 
 	
 
-	# Add main node interface
-	$node add-interface $chan $propInstance_ $llType_ $macType_ \
-	    $ifqType_ $ifqlen_ $phyType_ $antType_ $topoInstance_ \
-			$inerrProc_ $outerrProc_ $FECProc_
+	# Adding Interface
+	if {[info exist numifs_]} {
+		for {set i 0} {$i < $numifs_} {incr i} {
+			#Add one interface per channel
+			$node add-interface $chan($i) $propInstance_ $llType_ $macType \
+				$ifqType_ $ifqlen_ $phyType_ $antType_ $topoInstance_ \
+				$inerrProc_ $outerrProc_ $FECProc_
+		}
+	} else {
+		$node add-interface $chan $propInstance_ $llType_ $macType_ \
+		    $ifqType_ $ifqlen_ $phyType_ $antType_ $topoInstance_ \
+				$inerrProc_ $outerrProc_ $FECProc_
+	}
+
+
 	# Attach agent
 	if {$routingAgent_ != "DSR"} {
 		$node attach $ragent [Node set rtagent_port_]
