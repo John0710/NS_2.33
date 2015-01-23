@@ -59,12 +59,12 @@ STATIC	=
 LDFLAGS	=  -Wl,-export-dynamic 
 LDOUT	= -o $(BLANK)
 
-DEFINE	= -DTCP_DELAY_BIND_ALL -DNO_TK -DTCLCL_CLASSINSTVAR  -DNDEBUG -DLINUX_TCP_HEADER -DUSE_SHM -DHAVE_LIBTCLCL -DHAVE_TCLCL_H -DHAVE_LIBOTCL1_13 -DHAVE_OTCL_H -DHAVE_LIBTK8_4 -DHAVE_TK_H -DHAVE_LIBTCL8_4 -DHAVE_TCL_H  -DHAVE_CONFIG_H -DNS_DIFFUSION -DSMAC_NO_SYNC -DCPP_NAMESPACE=std -DUSE_SINGLE_ADDRESS_SPACE -Drng_test
+DEFINE	= -DTCP_DELAY_BIND_ALL -DNO_TK -DTCLCL_CLASSINSTVAR  -DNDEBUG -DLINUX_TCP_HEADER -DUSE_SHM -DHAVE_LIBTCLDBG -DHAVE_LIBTCLCL -DHAVE_TCLCL_H -DHAVE_LIBOTCL1_13 -DHAVE_OTCL_H -DHAVE_LIBTK8_4 -DHAVE_TK_H -DHAVE_LIBTCL8_4 -DHAVE_TCL_H  -DHAVE_CONFIG_H -DNS_DIFFUSION -DSMAC_NO_SYNC -DCPP_NAMESPACE=std -DUSE_SINGLE_ADDRESS_SPACE -Drng_test
 
 INCLUDES = \
 	-I.  \
 	-I. \
-	-I/usr/local/NS_2.33/tclcl-1.19 -I/usr/local/NS_2.33/otcl-1.13 -I/usr/local/NS_2.33/include -I/usr/local/NS_2.33/include -I/usr/include/pcap \
+	-I/usr/local/NS_2.33/tclcl-1.19 -I/usr/local/NS_2.33/otcl -I/usr/local/NS_2.33/include -I/usr/local/NS_2.33/include -I/usr/include/pcap \
 	-I./tcp -I./sctp -I./common -I./link -I./queue \
 	-I./adc -I./apps -I./mac -I./mobile -I./trace \
 	-I./routing -I./tools -I./classifier -I./mcast \
@@ -76,7 +76,7 @@ INCLUDES = \
 
 
 LIB	= \
-	-L/usr/local/NS_2.33/tclcl-1.19 -ltclcl -L/usr/local/NS_2.33/otcl-1.13 -lotcl -L/usr/local/NS_2.33/lib -ltk8.4 -L/usr/local/NS_2.33/lib -ltcl8.4 \
+	-L/usr/local/NS_2.33/tcl-debug-2.0 -ltcldbg -L/usr/local/NS_2.33/tclcl-1.19 -ltclcl -L/usr/local/NS_2.33/otcl -lotcl -L/usr/local/NS_2.33/lib -ltk8.4 -L/usr/local/NS_2.33/lib -ltcl8.4 \
 	-lXext -lX11 \
 	 -lnsl -ldl \
 	-lm -lm 
@@ -193,13 +193,7 @@ OBJ_CC = \
 	tcp/tcp-vegas.o tcp/tcp-rbp.o tcp/tcp-full.o tcp/rq.o \
 	baytcp/tcp-full-bay.o baytcp/ftpc.o baytcp/ftps.o \
 	tcp/scoreboard.o tcp/scoreboard-rq.o tcp/tcp-sack1.o tcp/tcp-fack.o \
-	tcp/linux/tcp_naivereno.o\
-	tcp/linux/src/tcp_cong.o\
-	tcp/linux/src/tcp_highspeed.o tcp/linux/src/tcp_bic.o tcp/linux/src/tcp_htcp.o tcp/linux/src/tcp_scalable.o tcp/linux/src/tcp_cubic.o\
-	tcp/linux/src/tcp_westwood.o tcp/linux/src/tcp_vegas.o tcp/linux/src/tcp_hybla.o\
-	tcp/linux/src/tcp_illinois.o tcp/linux/src/tcp_yeah.o \
-	tcp/linux/src/tcp_veno.o tcp/linux/src/tcp_compound.o tcp/linux/src/tcp_lp.o\
-	tcp/scoreboard1.o tcp/tcp-linux.o tcp/linux/ns-linux-util.o tcp/linux/ns-linux-c.o tcp/linux/ns-linux-param.o\
+	tcp/scoreboard1.o tcp/tcp-linux.o tcp/linux/ns-linux-util.o \
 	tcp/tcp-asym.o tcp/tcp-asym-sink.o tcp/tcp-fs.o \
 	tcp/tcp-asym-fs.o \
 	tcp/tcp-int.o tcp/chost.o tcp/tcp-session.o \
@@ -334,7 +328,14 @@ OBJ_CC = \
 #	sensor-nets/flood-agent.o \
 
 # what was here before is now in emulate/
-OBJ_C =
+OBJ_C = \
+	tcp/linux/tcp_naivereno.o\
+	tcp/linux/src/tcp_cong.o\
+	tcp/linux/src/tcp_highspeed.o tcp/linux/src/tcp_bic.o tcp/linux/src/tcp_htcp.o tcp/linux/src/tcp_scalable.o tcp/linux/src/tcp_cubic.o\
+	tcp/linux/src/tcp_westwood.o tcp/linux/src/tcp_vegas.o tcp/linux/src/tcp_hybla.o\
+	tcp/linux/src/tcp_illinois.o tcp/linux/src/tcp_yeah.o \
+	tcp/linux/src/tcp_veno.o tcp/linux/src/tcp_compound.o tcp/linux/src/tcp_lp.o\
+	tcp/linux/ns-linux-c.o tcp/linux/ns-linux-param.o
 
 OBJ_COMPAT = $(OBJ_GETOPT) common/win32.o
 #XXX compat/win32x.o compat/tkConsole.o

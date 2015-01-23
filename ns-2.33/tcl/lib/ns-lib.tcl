@@ -478,7 +478,7 @@ Simulator instproc node-config args {
         set args [eval $self init-vars $args]
 
         $self instvar addressType_  routingAgent_ propType_  macTrace_ \
-	    routerTrace_ agentTrace_ movementTrace_ channelType_ channel_ numfis_ \
+	    routerTrace_ agentTrace_ movementTrace_ channelType_ channel_ numifs_ \
 	    chan topoInstance_ propInstance_ mobileIP_ \
 	    rxPower_ txPower_ idlePower_ sleepPower_ sleepTime_ transitionPower_ \
 	    transitionTime_ satNodeType_ eotTrace_ phyTrace_
@@ -525,6 +525,7 @@ Simulator instproc node-config args {
  	# User can only specify either channelType_ (single_interface as 
 	# before) or channel_ (multi_interface)
  	# If both variables are specified, error!
+
  	if {[info exists channelType_] && [info exists channel_]} { 
 		error "Can't specify both channel and channelType, error!"
 	} elseif {[info exists channelType_] && ![info exists satNodeType_]} {
@@ -714,12 +715,11 @@ Simulator instproc create-wireless-node args {
 	}
 
 	
-
 	# Adding Interface
 	if {[info exist numifs_]} {
 		for {set i 0} {$i < $numifs_} {incr i} {
 			#Add one interface per channel
-			$node add-interface $chan($i) $propInstance_ $llType_ $macType \
+			$node add-interface $chan($i) $propInstance_ $llType_ $macType_ \
 				$ifqType_ $ifqlen_ $phyType_ $antType_ $topoInstance_ \
 				$inerrProc_ $outerrProc_ $FECProc_
 		}
